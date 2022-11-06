@@ -41,7 +41,7 @@
     <a href="https://github.com/rohn/icrtrainer"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://icrtrainer.com">View Demo</a>
+    <a href="http://icrtrainer.com">View Demo</a>
     ·
     <a href="https://github.com/rohn/icrtrainer/issues">Report Bug</a>
     ·
@@ -60,6 +60,14 @@
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li>
+          <a href="#using-website">Using the Website
+        </li>
+        <li>
+          <a href="#running-locally">Running Locally</a>
+        </li>
+      </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -107,7 +115,11 @@
 
 Probably the simplest means, and the one most people will follow, is to head to [http://ICRTrainer.com](http://icrtrainer.com) and use the existing version there.
 
+## Using the Website
 Once on the website, whether at [http://ICRTrainer.com](http://icrtrainer.com) or a locally hosted version, the simplest path to get started would be to:
+
+## Running Locally
+
 
 <ol style="margin-left: 60px; margin-bottom: 20px">
   <li>click the <code>enable background audio</code> button</li>
