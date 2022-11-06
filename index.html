@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Play Morse Code</title>
+    <meta name="viewport" content="width=230, initial-scale=1">
+    <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+    <script src="morseTable.js"></script>
+    <script src="morse.js"></script>
+    <script src="play.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body style="margin:0; padding:0">
+  <div style="padding:1em; padding-top:0.5em; padding-bottom:10em">
+
+    <h1 id="supportError" style="display:none">The Web Audio API is not supported in this browser.</h1>
+
+    <p>
+      <audio loop muted id="player" style="display:none">
+        <source src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA" type="audio/mp3">
+        This browser doesn't support the audio element.
+      </audio>
+      <div class="level" style="margin-bottom: -10px">
+        <div class="buttons level-left">
+          <button disabled id="playbutton" class="level-item button is-info is-rounded" onclick="playMorse()">Play</button>
+          <button disabled id="pausebutton" class="level-item button is-danger is-rounded" onclick="pauseMorse()">Pause</button>
+          <button disabled id="restartbutton" class="level-item button is-success is-rounded" onclick="restartMorse()">Restart</button>
+        </div>
+        <div class="buttons">
+          <button class="level-item button is-danger" id="enableBackground" onclick="enableMobileBackgroundAudio()">Enable background audio</button>
+          <button class="level-item button" id="disableBackground" onclick="disableMobileBackgroundAudio()" style="display:none">Disable background audio</button>
+          <button class="level-item button" id="disableKeyBeep" onclick="disableKeyBeep()">Disable Confirmation Beep</button>
+          <button class="level-item button" id="enableKeyBeep" onclick="enableKeyBeep()"style="display:none">Enable Confirmation Beep</button>
+        </div>
+        <div class="level-right">
+          <button class="level-item button is-light is-link is-rounded" style="margin-bottom: 1rem;" onClick="location.href='about.html'">About</button>
+        </div>
+      </div>
+
+      Sidetone Frequency:
+      <div class="level">
+        <div class="buttons level-left">
+          <button class="button is-small is-info is-outlined" onclick="frequencyButtonPress(700)">700Hz</button>
+          <button class="button is-small is-info is-outlined" onclick="frequencyButtonPress(750)">750Hz</button>
+          <button class="button is-small is-info is-outlined" onclick="frequencyButtonPress(800)">800Hz</button>
+           <span style="width: 200px">
+             <input class="input" type="number" id="freqText" oninput="frequencyTextChange()">
+             <input type="range" id="freqSlider" min="2" max="4" step="0.0001" style="width:200px" oninput="frequencySliderChange()">
+           </span>
+         </div>
+       </div>
+
+      <div class="content">
+      Pan: <input type="number" id="panText" step="0.1" oninput="panTextChange()">
+           <input type="range" id="panSlider" min="-1" max="1" step="0.01" style="width:200px" oninput="panSliderChange()">
+      <br>
+      Volume: <input type="number" id="volText" step="0.1" oninput="volumeTextChange()">
+              <input type="range" id="volSlider" min="0" max="2" step="0.01" style="width:200px" oninput="volumeSliderChange()">
+      <br>
+      WPM: <input type="number" id="wpmText" oninput="wpmTextChange()">
+           <input type="range" id="wpmSlider" min="15" max="50" step="1" style="width:200px" oninput="wpmSliderChange()">
+      <br>
+      FS: <input type="number" id="fsText" oninput="fsTextChange()">
+          <input type="range" id="fsSlider" min="2" max="50" step="1" style="width:200px" oninput="fsSliderChange()">
+      </div>
+      </p>
+
+      <pre id="log" style="display:none">Log:</pre>
+
+    </div>
+
+    <!-- Floating tools -->
+    <div style="position:fixed; bottom:0; height: 410px; width:100%; background: white; margin:0; padding:0; padding-left:10%; padding-right:10%; border:none; border-top:1px solid black">
+      <div style="width:100%; text-align:left">
+        <div style="width:100%; margin:0; margin-bottom:0.2em; margin-top:0.2em">
+          <div id='tally'></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="notification is-danger is-light" id="backgroundAudioNotification" style="width: 60%; margin: -185 auto; border: 2px solid #a33; display: none;">
+      <button class="delete"></button>
+      You must press the <span style="color: red"><strong>red</strong></span> <code>Enable background audio</code> button to allow the browser to play sound. This box can be dismissed by clicking the gray <code>X</code> in the upper right of the box (or you can safely ignore it).
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <p class="title">
+          ICR Trainer
+        </p>
+        <p class="subtitle">
+          Instant Character Recognition Trainer for Morse Code Study
+        </p>
+      </div>
+    </section>
+    <div style="height:30px"></div>
+    <section class="container">
+      <div>
+        <p>
+          <button class="level-item button is-light is-link is-rounded" style="margin-bottom: 1rem;" onClick="location.href='index.html'">Go to the Trainer</button>
+        </p>
+        <p class="block">
+          This ICR Trainer was created after my <a href="https://cwops.org/cw-academy/">CW Academy</a> Advisor, <a href="https://www.qrz.com/db/W8OV">W8OV</a>, told us about one similar, written by one of his past students, that is no longer
+          available on the web. Not only did the trainer sound like it would suit my style of practice, I thought I could further automate it to even better fit my wants and needs.
+        </p>
+        <p class="block">
+          The trainer will quiz you on morse characters, allowing you to hit a key on the keyboard that corresponds to a random morse character played. It keeps record of how long it takes you to hit that keyboard key after the character sound
+          has finished. Since it's keeping record, it can also futz with the randomness and weight the random choice, paying more favor to the characters you are slower on. All with automation. You just need to listen and respond <i>quickly</i>.
+        </p>
+        <p class="block">
+          This application was written initially to fill my needs. As such it likely contains bugs if you deviate from the "happy path" much. You can quickly get out of any unknown state by simply reloading the page; your progress will be saved.
+        </p>
+        <p class="block">
+          Speaking of progress... yes, your progress is saved locally in your browser's cache. Nothing is sent over the internet to another computer. Nothing is tracked external to your computer. The progress bars you see at the bottom of the
+          trainer display <i>relative</i> progress. You should only compare each progress bar with other progress bars, and not try to make a correlation to actual elapsed time.
+        </p>
+        <p class="block">
+          This effort is open sourced and can be found at <a href="http://github.com/rohn/icrtrainer">http://github.com/rohn/icrtrainer</a>. Any bugs you would like to report can be entered under the <strong>Issues</strong> tab on that page.
+        </p>
+        <p class="block">
+          Regarding bugs, restarting from a paused state is known to be somewhat iffy. If you pause, simply reload the page to continue. It's an inconvenience but your progress will have been saved when you hit pause. I'll of course address serious
+          issues that impede advancing skills, but like you, I am focused on increasing my code speed and so minor issues might not be addressed immediately.
+        </p>
+        <p class="block">
+          The simplest path would be for you to:
+          <ol style="margin-left: 60px; margin-bottom: 20px">
+            <li>click the <code>enable background audio</code> button</li>
+            <li>adjust the sidetone frequency to your liking</li>
+            <li>adjust the volume and speed controls, if necessary</li>
+            <li> click the <code>play</code>button</li>
+            <li>start hitting keys that correspond to the morse character played</li>
+          </ol>
+        </p>
+        <p class="block">
+          The player will not begin with three V's, but there will be a sizable (a few seconds) delay after you hit <code>play</code> to when the first character is played, to give you time to ready yourself. Incidently, the spacing between morse
+          characters is intra-word spacing not the length of a space between words (inter-word).
+        </p>
+        <p class="block">
+          Much credit to <a href="https://github.com/matthew-a-adams/morse-practice-scripts">https://github.com/matthew-a-adams/morse-practice-scripts</a> from which this is forked.
+        </p>
+        <p class="block">
+          <button class="level-item button is-light is-link is-rounded" style="margin-bottom: 1rem;" onClick="location.href='index.html'">Go to the Trainer</button>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
